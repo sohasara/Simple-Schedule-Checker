@@ -96,32 +96,46 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Meeting Scheduler')),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.red[100],
+        title: const Text('Meeting Scheduler'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             const Text(
               'Set Meeting 1 Time:',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton(
                   onPressed: () async {
                     _meeting1Start = await _pickTime(context);
-                    setState(() {});
+                    setState(
+                      () {},
+                    );
                   },
                   child: Text(
+                    style: const TextStyle(fontSize: 20),
                     'Start: ${_meeting1Start?.format(context) ?? 'Select'}',
                   ),
                 ),
                 TextButton(
                   onPressed: () async {
                     _meeting1End = await _pickTime(context);
-                    setState(() {});
+                    setState(
+                      () {},
+                    );
                   },
                   child: Text(
+                    style: const TextStyle(fontSize: 20),
                     'End: ${_meeting1End?.format(context) ?? 'Select'}',
                   ),
                 ),
@@ -130,9 +144,13 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             const Text(
               'Set Meeting 2 Time:',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton(
                   onPressed: () async {
@@ -140,6 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     setState(() {});
                   },
                   child: Text(
+                    style: const TextStyle(fontSize: 20),
                     'Start: ${_meeting2Start?.format(context) ?? 'Select'}',
                   ),
                 ),
@@ -149,6 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     setState(() {});
                   },
                   child: Text(
+                    style: const TextStyle(fontSize: 20),
                     'End: ${_meeting2End?.format(context) ?? 'Select'}',
                   ),
                 ),
@@ -157,7 +177,10 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _checkConflict,
-              child: const Text('Check Conflict'),
+              child: const Text(
+                'Check Conflict',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
             const SizedBox(height: 20),
             Text(
