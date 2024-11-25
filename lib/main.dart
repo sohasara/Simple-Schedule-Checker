@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.red[100],
-        title: const Text('Meeting Scheduler'),
+        title: const Text('Coseries Meeting Scheduler'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
