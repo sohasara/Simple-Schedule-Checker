@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.red[100],
-        title: const Text('Meeting Scheduler'),
+        title: const Text('Coseries Meeting Scheduler'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -187,9 +187,9 @@ class _HomeScreenState extends State<HomeScreen> {
               _resultMessage,
               style: TextStyle(
                 fontSize: 18,
-                color: _resultMessage.contains('conflict')
-                    ? Colors.red
-                    : Colors.green,
+                color: _resultMessage.contains('No conflict')
+                    ? Colors.green
+                    : Colors.red,
               ),
             ),
           ],
